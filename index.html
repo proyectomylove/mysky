@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Mes, Mi Amor!</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2NNE565F1E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2NNE565F1E');
+</script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">                
+    <link rel="stylesheet" href="./css/index.css">
+        <link rel="icon" type="image/x-icon" href="https://dedicapag.rf.gd/favicon.ico?v=1">
+</head>
+<body>
+        <audio id="backgroundMusic" loop preload="auto" volume="0">
+        <source src="https://dedicapag.rf.gd/musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+    <div class="parallax-bg"></div>
+    <div class="overlay"></div>
+        <div class="title">
+        <h1>¡Bienvenida, Mi Amor!</h1>
+    </div>
+    <div class="container">
+        <div class="main-content">
+            <div class="image-container">
+                <img src="./img/1.jpg" alt="Cover Image" class="cover-image">
+            </div>
+            <div class="password-section">
+                <p class="password-hint">Ingresa la contraseña</p>
+                <p class="hint">Pista: La fecha donde nuetros corazones se unieron</p>
+                <div class="password-display" id="password-display"></div>
+                <div class="error" id="error">Contraseña incorrecta, intenta de nuevo.</div>
+                <div class="keyboard" role="region" aria-label="Teclado numérico">
+                    <button class="key" onclick="addDigit('1')">1</button>
+                    <button class="key" onclick="addDigit('2')">2</button>
+                    <button class="key" onclick="addDigit('3')">3</button>
+                    <button class="key" onclick="addDigit('4')">4</button>
+                    <button class="key" onclick="addDigit('5')">5</button>
+                    <button class="key" onclick="addDigit('6')">6</button>
+                    <button class="key" onclick="addDigit('7')">7</button>
+                    <button class="key" onclick="addDigit('8')">8</button>
+                    <button class="key" onclick="addDigit('9')">9</button>
+                    <button class="key delete-key" onclick="deleteDigit()">⌫</button>
+                    <button class="key" onclick="addDigit('0')">0</button>
+                    <button class="key" onclick="addDigit('*')">#</button>
+                    <button class="key enter-key" onclick="checkPassword()">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log('Attempting to load CSS file: /css/index.css');
+        
+        let password = '';
+        const passwordDisplay = document.getElementById('password-display');
+
+        function addDigit(digit) {
+            password += digit;
+            updateDisplay();
+            animateKey(digit);
+        }
+
+        function deleteDigit() {
+            password = password.slice(0, -1);
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            passwordDisplay.textContent = '♥'.repeat(password.length);
+        }
+
+        function checkPassword() {
+            const error = document.getElementById('error');
+            if (password === '091224') {
+                //console.log('Password correct, redirecting to celebration.php');
+                window.location.href = 'love.html';
+            } else {
+                error.style.display = 'block';
+                password = '';
+                updateDisplay();
+                setTimeout(() => error.style.display = 'none', 2000);
+            }
+        }
+
+        function animateKey(key) {
+            const buttons = document.querySelectorAll('.key');
+            buttons.forEach(button => {
+                if (button.textContent === key) {
+                    button.style.transform = 'scale(0.95)';
+                    setTimeout(() => button.style.transform = 'scale(1)', 100);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Mes, Mi Amor!</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2NNE565F1E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2NNE565F1E');
+</script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=1">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&family=Dancing+Script&family=Satisfy&family=Tangerine&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Orbitron:wght@700&family=Great+Vibes&family=Oswald&family=Parisienne&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/love.css">
+</head>
+<body>
+        <div class="music-control">
+        <button class="music-btn" id="musicBtn" aria-label="Toggle music">
+            <svg id="playIcon" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg id="pauseIcon" viewBox="0 0 24 24" style="display: none;">
+                <path d="M6 19h4V5H6zm8-14v14h4V5z"/>
+            </svg>
+        </button>
+        <div class="volume-control" id="volumeControl">
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5" aria-label="Volume control">
+        </div>
+        </div>
+
+
+        
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="./musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+    <div class="parallax-bg"></div>
+    <div class="overlay-bg"></div>
+    <div class="main-container">
+        <h1 class="title">Para el amor de mi Vida</h1>
+        <div class="intro glass-effect">
+            Mi amor, deseo con todo mi corazón que lo nuestro siga creciendo con el tiempo. 
+            Le pido a Dios que nos dé la sabiduría y la fuerza para cuidar este vínculo, 
+            superar juntos lo que venga y construir un futuro lleno de amor, respeto</div>
+
+        <div class="quote-section glass-effect">
+            "Contigo todo es paz, amor y seguridad"
+        </div>
+
+        <div class="carousel">
+            <div class="image-container active" style="background-image: url('./img/2.jpg');">
+                <img src="./img/2.jpg" alt="Memory 1">
+            </div>
+            <div class="image-container" style="background-image: url('./img/3.jpg');">
+                <img src="./img/3.jpg" alt="Memory 2">
+            </div>
+            <div class="image-container" style="background-image: url('./img/4.jpg');">
+                <img src="./img/4.jpg" alt="Memory 3">
+            </div>
+            <div class="image-container" style="background-image: url('./img/5.jpg');">
+                <img src="./img/5.jpg" alt="Memory 2">
+            </div>
+            <div class="image-container" style="background-image: url('./img/6.jpg');">
+                <img src="./img/6.jpg" alt="Memory 2">
+            </div>
+            <div class="image-container" style="background-image: url('./img/7.jpg');">
+                <img src="./img/7.jpg" alt="Memory 2">
+            </div>
+            <div class="image-container" style="background-image: url('./img/8.jpg');">
+                <img src="./img/8.jpg" alt="Memory 2">
+            </div>
+            <div class="image-container" style="background-image: url('./img/9.jpg');">
+                <img src="./img/9.jpg" alt="Memory 2">
+            </div>
+            <div class="image-container" style="background-image: url('./img/10.jpg');">
+                <img src="./img/10.jpg" alt="Memory 2">
+            </div>
+            <div class="image-container" style="background-image: url('./img/11.jpg');">
+                <img src="./img/11.jpg" alt="Memory 2">
+            </div>
+            <div class="image-container" style="background-image: url('./img/12.jpg');">
+                <img src="./img/12.jpg" alt="Memory 2">
+            </div>
+            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <div class="divider"></div>
+
+        <button class="heart-btn" id="openLetterBtn"><span>Para ti</span></button>
+
+        <div class="letter-overlay" id="letterOverlay">
+            <div class="letter-card">
+                <button class="close" id="closeLetterBtn">×</button>
+                <h2>Cada palabra es mía, pero tú le diste vida</h2>
+                <div class="typewriter-container" id="typewriterText">
+                                            <div class="line"><span class="text"></span><span class="cursor"></span></div>
+                                    </div>
+                <p class="signature">
+                    Con mucho amor, de tu Pequeño                </p>
+            </div>
+        </div>
+
+        <div class="memory-section glass-effect fade-in-section">
+            <h2 class="section-title">Nuestros Recuerdos</h2>
+                            <div class="memory-item hover-effect">
+                    <h3>El Primer Beso</h3>
+                    <div class="date">1 de Diciembre, 2024</div>
+                    <p>Recuerdo aquel momento luego terminar una de las varias caminatas que tuvimos  nos sentamos en el parque,
+                        cuando tome las fuerzas para poder decirte todo lo que siento aun estando nervioso pude expresarme y decirte lo mucho que
+                        te queria y lo presente que estas en mi mente y tras algunos minutos de conversar me fui acercando lentamente hacia ti con
+                        muchos nervios, pensaba miles de cosas, pero todo se calmo cuando te bese... de la alegria hasta queria cantar... Recuerdo
+                        que al regresar a casa me preguntaba si es un sueño? ... aquella chica con la cual descubri que tenia mucho en comun miraba en sus estados toda hermosa
+                        toda una miss y ahora tengo la fortuna de que sea mi enamorada ♥
+                      </p>
+                </div>
+                            <div class="memory-item hover-effect">
+                    <h3>La Pelicula</h3>
+                    <div class="date">11 de enero, 2025</div>
+                    <p>
+                        Aquel dia fuimos a ver "INTERESTELLAR" mi favorita, recuerdo haber planeado ese dia comprando los boletos y la canchita ya desde antes para solo 
+                        ese dia ir recojer e ingresar a la sala, te invite a verla conmigo porque se que lo valoraras mucho y no me equivoque, verla por primera ves en cine 
+                        y en pantalla super grande experimentar eso contigo fue un bonito recuerdo, recuerdas al entrar a la sala parecia que estabamos entrando a una nave jaj
+                        nos soprendio lo bonito que se veia todo y lo grande que era, sabes no permitiria que alguien te haga llorar , pero al verte llorar de emocion
+                        y mostrar tu sencibilidad, me hace amarte y cuidarte aun mas, saliendo tambien queriamos nuestra sesion de fotos y tuvimos que esperar pero 
+                        aprovechava en explicarte algunos detalles de la pelicula... como lo escribi tambien en la tarjeta que acopañaban esos tulipanes el dia de san valentin que solo realzan tu 
+                        belleza ... eres la anomalia gravitacional que me indica que eres la mujer de mis sueños ♥ , estoy seguro de eso como de mi amor por ti my love ♥
+                    </p>
+                </div>
+                            <div class="memory-item hover-effect">
+                    <h3>El Primer Viaje</h3>
+                    <div class="date">30 de Marzo, 2025</div>
+                    <p> 
+                        Comenzo desde los preparativos, coordinar nuestro outfit, como el ir a comprar a gamarra... recuerdo que te sorprendiste al encontrarnos y verme para luego 
+                        ir a la casa de tu amiga, para mi esa ves cuando vimos una pelicula y descanzamos sentados pero juntos en el sofa fue muy confortante
+                        el verte dormir en mis brasos y compartir algo que nos gusta: dormir bien ♥ despertamos temprano ya en el bus hicimos match y verte mirar por
+                        la ventana y darme cuenta que el viaje habia llegado y estaba pasando en ese instante me lleno el corazón de alegria, cuando llegamos nos dimos cuenta
+                        que el agua estaba helada y para suerte tambin habia como una pequeña piscina pero mucho mas caliente, ese dia como en ese viaje solo trate de gastar
+                        lo minimo en cuanto a mi pasaje porque no tenia mucho dinero pero si tenia alguito mas por si talves te encantaba mucho algun detalle pero mas bien el sorprendido fui yo al verte regresar 
+                        con un almuerzo para mi, que sinceramente con galleta y agua hubiera sobrevivido pero eres muy increible al preocuparte por ello... 
+                        en el camino de regreso nos la pasamos durmiendo pero tambien me preguntaba si estabas realmente comoda y te lo preguntaba cada cierto tiempo
+                        sin que nos demos cuenta se nos termino el pero siempre estara aqui como en nuetroa pensamientos ♥
+                    </p>
+                </div>
+                    </div>
+
+        <div class="time-since-birth glass-effect fade-in-section">
+            <div class="time-title">Nuestra Historia inicio hace</div>
+            <div class="time-display" id="timeDisplay"></div>
+            <div class="time-label">Días : Horas : Min : Seg</div>
+            <div class="personalized-message">Y desde aquel dia eres lo más preciado en mi vida</div>
+        </div>
+
+        <div class="future-plans glass-effect fade-in-section">
+            <h2 class="section-title">Nuestro Futuro</h2>
+            <p>Tenemos muchas cosas en mente amor y eso es lo bonito como el dia a dia tomados de la mano completamos paso a paso un camino 
+                cuya meta tendra sus pruebas dificultades, adversidades ... juntos y con la ayuda de dios podremos salir adelante tanto es nuetros objetivos
+                como pareja como personales. Te amo mucho mi amor no en vano digo que el love of my live ♥♥♥
+                Nuestras pulseras son un simbolo de nuestro amor, y un valioso recuerdo que me encanta presumir ... por mucho mas tiempo a tu lado ♥
+            </p>
+        </div>
+
+        <div class="love-meter glass-effect fade-in-section">
+            <h2>
+                Nuestro Amor            </h2>
+            <div class="meter-container">
+                <div class="meter-fill"></div>
+            </div>
+            <div class="meter-text">100% Tuyo, siempre</div>
+        </div>
+
+        <div class="end-message glass-effect fade-in-section">
+            Desde que llegaste a mi vida, todo comenzo a ser felicidad. No sé si fue el destino, la suerte o un milagro, 
+      aunque me inclino mas por el destino pero encontrarte fue como encender una luz en medio de tanta oscuridad
+      Tu sonrisa me da calma, tu manera de hablar me llena de amor y tus abrazos se sienten como un hogar<p class="signature">El Pequeño</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright © 2025  |  Creado con amor para Johanna Guerra Marín </p>
+    </div>
+
+    <script>
+        function createStars() {
+            const sky = document.querySelector('.overlay-bg');
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'particle';
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animation = `fadeInUp ${Math.random() * 2 + 1}s infinite`;
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                sky.appendChild(star);
+            }
+        }
+
+        createStars();
+
+        const carouselContainers = document.querySelectorAll('.carousel .image-container');
+        let currentImage = 0;
+        let isTransitioning = false;
+
+        function showImage(index, direction = 'next') {
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            const currentContainer = carouselContainers[currentImage];
+            const nextContainer = carouselContainers[index];
+
+            carouselContainers.forEach(container => {
+                container.classList.remove('active');
+                container.style.opacity = '0';
+                container.style.transform = direction === 'next' ? 'translateX(100%)' : 'translateX(-100%)';
+            });
+
+            nextContainer.classList.add('active');
+            nextContainer.style.opacity = '1';
+            nextContainer.style.transform = 'translateX(0)';
+
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 800);
+
+            currentImage = index;
+        }
+
+        document.querySelector('.next-btn').addEventListener('click', () => {
+            const nextIndex = (currentImage + 1) % carouselContainers.length;
+            showImage(nextIndex, 'next');
+        });
+
+        document.querySelector('.prev-btn').addEventListener('click', () => {
+            const prevIndex = (currentImage - 1 + carouselContainers.length) % carouselContainers.length;
+            showImage(prevIndex, 'prev');
+        });
+
+        setInterval(() => {
+            const nextIndex = (currentImage + 1) % carouselContainers.length;
+            showImage(nextIndex, 'next');
+        }, 6000);
+
+        let typewriterTimeout = null;
+
+        function typeLine(lineElement, text, speed = 20, onDone) {
+            const textSpan = lineElement.querySelector('.text');
+            const cursor = lineElement.querySelector('.cursor');
+            textSpan.textContent = '';
+            lineElement.classList.add('active');
+            let index = 0;
+
+            function typeChar() {
+                if (index < text.length) {
+                    textSpan.textContent += text.charAt(index);
+                    index++;
+                    typewriterTimeout = setTimeout(typeChar, speed);
+                } else {
+                    cursor.style.display = 'none';
+                    if (onDone) onDone();
+                }
+            }
+
+            cursor.style.display = 'inline-block';
+            typeChar();
+        }
+
+        function openLetterModal() {
+            const overlay = document.getElementById('letterOverlay');
+            const typewriterText = document.getElementById('typewriterText');
+            const lines = typewriterText.querySelectorAll('.line');
+            const texts = ["love of my live ♥, sabes lo maravillosa que eres... pero no sabes con cuando amor te miro atravez de mis ojos cuando te quedo observando y me dices no me mires asi, eres la razon por la cual me peleo con el tiempo para que este se detenga cuando estamos juntos, te dedico estas letras pero esta ves el algo diferente es algo que puedes ver cada instante del dia en cualquier momento del a\u00f1o ahi estara para ti y por ti mi princesa \n\nEstoy orgulloso de la gran persona que eres yo solo seria feliz viendote desde un pedestal y admirarte pero en cambio tengo la fortuna de de tomarte de la mano y ser amado por la mujer que uno una vez so\u00f1o y se preguntaba donde estaba o que estara haciendo. Preciosa te mereces el mundo entero por la increible persona que eres, gracias a tus padres, familiaresa , etc \n\nSolo me queda agradecer a cada persona que si dios me lo permite podre conocer en un futuro, aquel futuro que anelamos... Se que puedes sola y amo eso de ti pero desde que llegue a tu vida estoy para poyarte en lo necesites somos un equipo, somos los dos, en este mundo que no entiende de reglas, somos los dos juntos en esta aventura llamada vida"].filter(text => text.trim() !== '');
+
+            if (typewriterTimeout) {
+                clearTimeout(typewriterTimeout);
+                typewriterTimeout = null;
+            }
+
+            lines.forEach(line => {
+                const textSpan = line.querySelector('.text');
+                const cursor = line.querySelector('.cursor');
+                textSpan.textContent = '';
+                cursor.style.display = 'none';
+                line.classList.remove('active');
+            });
+
+            overlay.style.display = 'flex';
+
+            function typeNextLine(index) {
+                if (index < lines.length && index < texts.length && texts[index]) {
+                    typeLine(lines[index], texts[index], 20, () => {
+                        typeNextLine(index + 1);
+                    });
+                } else {
+                    lines.forEach(line => line.querySelector('.cursor').style.display = 'none');
+                }
+            }
+
+            typeNextLine(0);
+        }
+
+        document.getElementById('openLetterBtn').addEventListener('click', openLetterModal);
+
+        document.getElementById('closeLetterBtn').addEventListener('click', () => {
+            const overlay = document.getElementById('letterOverlay');
+            const typewriterText = document.getElementById('typewriterText');
+            const lines = typewriterText.querySelectorAll('.line');
+
+            if (typewriterTimeout) {
+                clearTimeout(typewriterTimeout);
+                typewriterTimeout = null;
+            }
+
+            lines.forEach(line => {
+                const textSpan = line.querySelector('.text');
+                const cursor = line.querySelector('.cursor');
+                textSpan.textContent = '';
+                cursor.style.display = 'none';
+            });
+
+            overlay.style.display = 'none';
+        });
+
+        window.onclick = function(event) {
+            const overlay = document.getElementById('letterOverlay');
+            if (event.target === overlay) {
+                const typewriterText = document.getElementById('typewriterText');
+                const lines = typewriterText.querySelectorAll('.line');
+
+                if (typewriterTimeout) {
+                    clearTimeout(typewriterTimeout);
+                    typewriterTimeout = null;
+                }
+
+                lines.forEach(line => {
+                    const textSpan = line.querySelector('.text');
+                    const cursor = line.querySelector('.cursor');
+                    textSpan.textContent = '';
+                    cursor.style.display = 'none';
+                });
+
+                overlay.style.display = 'none';
+            }
+        };
+
+        const fadeSections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (entry.target.classList.contains('love-meter')) {
+                        const meterFill = entry.target.querySelector('.meter-fill');
+                        setTimeout(() => {
+                            meterFill.classList.add('active');
+                        }, 500);
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeSections.forEach(section => observer.observe(section));
+
+        document.addEventListener('click', (e) => {
+            for (let i = 0; i < 10; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = `${e.clientX}px`;
+                particle.style.top = `${e.clientY}px`;
+                particle.style.animation = `zoomIn 0.8s ease-out`;
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 800);
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // let days = 212;
+        // let hours = 1;
+        // let minutes = 52;
+        // let seconds = 44;
+        // const timeDisplay = document.getElementById('timeDisplay');
+
+        // function updateTime() {
+        //     seconds++;
+        //     if (seconds >= 60) {
+        //         seconds = 0;
+        //         minutes++;
+        //     }
+        //     if (minutes >= 60) {
+        //         minutes = 0;
+        //         hours++;
+        //     }
+        //     if (hours >= 24) {
+        //         hours = 0;
+        //         days++;
+        //     }
+        //     timeDisplay.textContent = `${days.toString().padStart(3, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        // }
+
+        // setInterval(updateTime, 1000);
+
+                const startDate = new Date('2024-12-09T00:00:00'); // Fecha de inicio de la relación
+            const timeDisplay = document.getElementById('timeDisplay');
+
+            function updateTime() {
+                const now = new Date();
+                const diff = now - startDate;
+
+                const totalSeconds = Math.floor(diff / 1000);
+                const days = Math.floor(totalSeconds / (3600 * 24));
+                const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const seconds = totalSeconds % 60;
+
+                timeDisplay.textContent = `${days.toString().padStart(3, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            setInterval(updateTime, 1000);
+            updateTime(); // Ejecuta al cargar para no esperar 1 segundo
+
+        function toggleMusic() {
+            const music = document.getElementById('backgroundMusic');
+            const playIcon = document.getElementById('playIcon');
+            const pauseIcon = document.getElementById('pauseIcon');
+            if (!music) {
+                console.error('No music element found');
+                return;
+            }
+            if (music.paused) {
+                music.play().then(() => {
+                    console.log('Music playing at:', music.currentTime);
+                    playIcon.style.display = 'none';
+                    pauseIcon.style.display = 'block';
+                }).catch(error => {
+                    console.error('Error playing audio:', error.message);
+                });
+            } else {
+                music.pause();
+                console.log('Music paused at:', music.currentTime);
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+            }
+        }
+
+                window.onload = function() {
+            const music = document.getElementById('backgroundMusic');
+            const musicBtn = document.getElementById('musicBtn');
+            const playIcon = document.getElementById('playIcon');
+            const pauseIcon = document.getElementById('pauseIcon');
+            const volumeSlider = document.getElementById('volumeSlider');
+            const volumeControl = document.getElementById('volumeControl');
+
+            if (!music || !musicBtn || !volumeSlider || !volumeControl) {
+                console.error('Music or control elements not found');
+                return;
+            }
+
+            music.volume = volumeSlider.value;
+
+            music.load();
+            music.currentTime = 0;
+            music.play().then(() => {
+                console.log('Autoplay successful at:', music.currentTime);
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }).catch(error => {
+                console.warn('Autoplay blocked:', error.message);
+            });
+
+            musicBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMusic();
+                if (!volumeControl.classList.contains('visible')) {
+                    volumeControl.classList.add('visible');
+                    clearTimeout(hideVolumeTimeout);
+                    hideVolumeTimeout = setTimeout(() => volumeControl.classList.remove('visible'), 2000);
+                } else {
+                    volumeControl.classList.remove('visible');
+                }
+            });
+
+            let hideVolumeTimeout = null;
+            volumeSlider.addEventListener('input', (e) => {
+                music.volume = e.target.value;
+                console.log('Volume set to:', music.volume);
+                clearTimeout(hideVolumeTimeout);
+                volumeControl.classList.add('visible');
+            });
+
+            volumeSlider.addEventListener('change', () => {
+                hideVolumeTimeout = setTimeout(() => volumeControl.classList.remove('visible'), 2000);
+            });
+
+            volumeControl.addEventListener('mouseenter', () => clearTimeout(hideVolumeTimeout));
+            volumeControl.addEventListener('mouseleave', () => {
+                hideVolumeTimeout = setTimeout(() => volumeControl.classList.remove('visible'), 2000);
+            });
+
+            volumeSlider.addEventListener('touchstart', (e) => {
+                e.stopPropagation();
+                clearTimeout(hideVolumeTimeout);
+            });
+            volumeSlider.addEventListener('touchend', () => {
+                hideVolumeTimeout = setTimeout(() => volumeControl.classList.remove('visible'), 2000);
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!volumeControl.contains(e.target) && !musicBtn.contains(e.target)) {
+                    volumeControl.classList.remove('visible');
+                    clearTimeout(hideVolumeTimeout);
+                }
+            });
+
+            music.addEventListener('loadeddata', () => console.log('Audio data loaded'));
+            music.addEventListener('error', (e) => console.error('Audio error:', e.message));
+            music.addEventListener('play', () => console.log('Music play event'));
+            music.addEventListener('pause', () => console.log('Music pause event'));
+        };
+            </script>
+</body>
+</html>
