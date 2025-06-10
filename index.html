@@ -102,8 +102,26 @@
             });
         }
     </script>
-</body>
 
+
+
+    <!-- Desactiva:
+    El menú del clic derecho, las herramientas del desarrollador (F12, Ctrl+Shift+I, Ctrl+Shift+J) -->
+<script type="text/javascript">
+    window.oncontextmenu = function () {
+        return false;
+    }
+    $(document).keydown(function (event) {
+        if (event.keyCode == 123) {
+            return false;
+        } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+            return false;
+        } else if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
+            return false;
+        }
+    });
+</script>
+    
 <!-- Modal para mostrar Copyright -->
 <div class="modal fade" id="modalCopyright" tabindex="-1" aria-labelledby="modalCopyrightLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -133,6 +151,14 @@
         });
     });
 </script>
+
+
+    
+    
+</body>
+
+
+
 
     
 </html>
