@@ -103,4 +103,36 @@
         }
     </script>
 </body>
+
+<!-- Modal para mostrar Copyright -->
+<div class="modal fade" id="modalCopyright" tabindex="-1" aria-labelledby="modalCopyrightLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCopyrightLabel">Copyright ©</h5>
+            </div>
+            <div class="modal-body">
+                <p> © 2025 Micael Cuadrado. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script para cambiar el tituo al cambiar de pestaña -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const originalTitle = document.title; // Guardar el título original
+
+        // Cambiar el título al cambiar de pestaña
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'hidden') {
+                document.title = "! I Love You !";
+            } else {
+                document.title = originalTitle; // Restaurar el título original
+            }
+        });
+    });
+</script>
+
+    
 </html>
