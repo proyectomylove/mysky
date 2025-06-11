@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Feliz Mes, Mi Amor!</title>
-    <link rel="shortcut icon" href="./img/corazon.png">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2NNE565F1E"></script>
 <script>
@@ -21,7 +20,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&family=Dancing+Script&family=Satisfy&family=Tangerine&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Orbitron:wght@700&family=Great+Vibes&family=Oswald&family=Parisienne&family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- para que funcione el modal -->
+    <link rel="stylesheet" href="./css/modal.css" >
     <link rel="stylesheet" href="./css/love.css">
+    <link rel="shortcut icon" href="./img/corazon.png">
+    
 </head>
 <body>
         <div class="music-control">
@@ -533,5 +537,64 @@
             music.addEventListener('pause', () => console.log('Music pause event'));
         };
             </script>
+
+                    <!-- jQuery (necesario porque lo usas en script.js) y antes de los bloqueos de teclas para que funcione -->
+        <script src="./js/jquery-3.4.1.min.js"></script>    
+
+        <!-- Desactiva:
+        El menú del clic derecho, las herramientas del desarrollador (F12, Ctrl+Shift+I, Ctrl+Shift+J) -->
+        <script type="text/javascript">
+            window.oncontextmenu = function () {
+                return false;
+            }
+            $(document).keydown(function (event) {
+                if (event.keyCode == 123) {
+                    return false;
+                } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+                    return false;
+                } else if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
+                    return false;
+                }
+            });
+        </script>
+            
+        <!-- Modal para mostrar Copyright -->
+        <div class="modal fade" id="modalCopyright" tabindex="-1" aria-labelledby="modalCopyrightLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCopyrightLabel">Copyright ©</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p> © 2025 Micael Cuadrado. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Script para cambiar el tituo al cambiar de pestaña -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const originalTitle = document.title; // Guardar el título original
+        
+                // Cambiar el título al cambiar de pestaña
+                document.addEventListener('visibilitychange', function() {
+                    if (document.visibilityState === 'hidden') {
+                        document.title = "! I Love You !";
+                    } else {
+                        document.title = originalTitle; // Restaurar el título original
+                    }
+                });
+            });
+        </script>
+        
+    
+        <!-- Bootstrap 5 JS bundle (incluye Popper) -->
+        <script src="./js/bootstrap.min.js"></script>
+    
+        <script src="./js/script.js"></script>
+    
+
+    
 </body>
 </html>
