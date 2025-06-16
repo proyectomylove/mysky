@@ -159,10 +159,12 @@
     .modal-title {
     color:  #ff4d6d;/* Color del texto del título */
     font-size: 20px;
+    font-family: 'Playfair Display', serif;
     }
     
     .modal-body {
     color: #c4c4c4; /* Color del texto del cuerpo */
     font-size: 16px;
     padding: 20px;
+    font-family: 'Playfair Display', serif;
     }
